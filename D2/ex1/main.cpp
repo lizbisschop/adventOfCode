@@ -51,19 +51,25 @@ int        main(void)
             while (isdigit(array[i][j]))
                 j++;
             max = atoi(ft_substr(array[i],  old_j, j - old_j));
-            j += 2;
+            j++;
             c = array[i][j];
-            j += 3;
-            array[i] = ft_substr(array[i], old_j, j - old_j);
+            j++;
+            array[i] = ft_substr(array[i], j, 100);
             j = 0;
             while (array[i][j] != '\0')
             {
                 if (array[i][j] == c)
+                {
+
                     in_it++;
+                }
                 j++;
             }
             if (in_it >= min && in_it <= max)
+            {
+                
                 valid++;
+            }
         }
         i++;
     }
